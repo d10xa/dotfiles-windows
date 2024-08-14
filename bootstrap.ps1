@@ -89,3 +89,12 @@ if (-not $gitInstalled) {
     Write-Host "Git is already installed." -ForegroundColor Yellow
 }
 Set-Git-Configuration;
+
+# Windows
+
+$RegPath = "HKCU:\Control Panel\International";
+Set-ItemProperty -Path $RegPath -Name "iFirstDayOfWeek" -Value "0";
+Set-ItemProperty -Path $RegPath -Name "sShortDate" -Value "yyyy-MM-dd";
+Set-ItemProperty -Path $RegPath -Name "sLongDate" -Value "dddd, d MMMM, yyyy";
+Set-ItemProperty -Path $RegPath -Name "sShortTime" -Value "HH:mm";
+Set-ItemProperty -Path $RegPath -Name "sTimeFormat" -Value "HH:mm:ss";
